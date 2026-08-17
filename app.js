@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import createUserTable from "./model/user.model.js";
+import DatabaseModel from "./model/database.models.js";
 import AuthRouter from "./router/auth.route.js"
 import ProfileRouter from "./router/profile.route.js";
 
-createUserTable();
+DatabaseModel(); // call all database models
 
 const app = express();
 
