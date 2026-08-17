@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import createUserTable from "./model/user.model.js";
 import AuthRouter from "./router/auth.route.js"
+import ProfileRouter from "./router/profile.route.js";
 
 createUserTable();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', AuthRouter);
+app.use('/api', ProfileRouter);
 app.get("/", (req, res) => res.send("Welcome to tobi chat server"));
 
 const PORT = 3000;
